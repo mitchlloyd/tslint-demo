@@ -1,0 +1,5 @@
+{
+    "rules": {
+        "deprecate-parse-query-params": true
+    }
+}

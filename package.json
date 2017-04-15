@@ -1,0 +1,16 @@
+{
+  "name": "tslint-demo",
+  "version": "1.0.0",
+  "description": "Demo rules for tslint",
+  "main": "index.js",
+  "author": "Mitch Lloyd",
+  "license": "MIT",
+  "dependencies": {
+    "tslint": "^5.0.0",
+    "typescript": "^2.2.2"
+  },
+  "scripts": {
+    "serve": "tsc --watch",
+    "test": "tslint --test src/test/* --rules-dir src"
+  }
+}

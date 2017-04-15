@@ -1,0 +1,5 @@
+import parseQueryParams from 'app/utils/parse-query-params';
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [parseQueryParams is deprecated! Please use `query-params`]
+
+import { parse } from 'app/utils/query-params';
+
