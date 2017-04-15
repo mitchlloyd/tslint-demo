@@ -10,45 +10,16 @@ export class Rule extends Lint.Rules.AbstractRule {
 }
 
 class CustomLocationWalker extends Lint.RuleWalker {
-  private isShadowedStack = [false];
-
   public visitIdentifier(node: ts.Identifier) {
     if (
       node.text === 'location' && (
-        (!isProperty(node) && !this.isLocationShadowed()) ||
-        isWindowDotLocationIdentifier(node)
+        (!isProperty(node)) || isWindowDotLocationIdentifier(node)
       )
     ) {
       this.addFailure(this.createFailure(node.getStart(), node.getWidth(), Rule.FAILURE_STRING));
     }
 
     super.visitIdentifier(node);
-  }
-
-  public visitVariableDeclaration(node: ts.VariableDeclaration) {
-    if (node.name.kind === ts.SyntaxKind.Identifier && node.name.text === 'location') {
-      this.isShadowedStack[this.isShadowedStack.length - 1] = true;
-    }
-
-    super.visitVariableDeclaration(node);
-  }
-
-  protected visitNode(node: ts.Node) {
-    const isNewBlockScope = Lint.isBlockScopeBoundary(node);
-
-    if (isNewBlockScope) {
-      this.isShadowedStack.push(false);
-    }
-
-    super.visitNode(node);
-
-    if (isNewBlockScope) {
-      this.isShadowedStack.pop();
-    }
-  }
-
-  private isLocationShadowed() {
-    return this.isShadowedStack[this.isShadowedStack.length - 1]
   }
 }
 
