@@ -1,9 +1,6 @@
 let loc = location;
           ~~~~~~~~ [Use our custom location utility!]
 
-let location = foo;
-let bar = location;
-
 function newFn() {
   location.open();
   ~~~~~~~~ [Use our custom location utility!]

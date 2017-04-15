@@ -14,7 +14,7 @@ class DeprecatedModulesWalker extends Lint.RuleWalker {
     if (node.moduleSpecifier.kind === ts.SyntaxKind.StringLiteral) {
       const importString = <ts.StringLiteral>node.moduleSpecifier;
 
-      if (importString.text === 'app/utils/parse-query-params') {
+      if (importString.text === 'parse-query-params') {
         this.addFailure(this.createFailure(node.getStart(), node.getWidth(), Rule.FAILURE_STRING));
       }
     }

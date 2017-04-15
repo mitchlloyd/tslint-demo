@@ -11,6 +11,7 @@
   },
   "scripts": {
     "serve": "tsc --watch",
-    "test": "tslint --test src/test/* --rules-dir src"
+    "test": "tslint --test src/test/* --rules-dir src",
+    "lint": "tslint --type-check --project tsconfig.json ./src/**/*.ts"
   }
 }
