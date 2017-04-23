@@ -1,0 +1,9 @@
+{
+    "defaultSeverity": "error",
+    "extends": [],
+    "exclude": ["./**/*.js"],
+    "rules": {
+        "deprecate-parse-query-params": true
+    },
+    "rulesDirectory": ["dist"]
+}
