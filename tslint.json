@@ -3,6 +3,7 @@
     "extends": [],
     "exclude": ["./**/*.js"],
     "rules": {
+        "custom-location": true,
         "deprecate-parse-query-params": true
     },
     "rulesDirectory": ["dist"]
