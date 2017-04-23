@@ -10,15 +10,4 @@ export class Rule extends Lint.Rules.AbstractRule {
 }
 
 class DeprecatedModulesWalker extends Lint.RuleWalker {
-  public visitImportDeclaration(node: ts.ImportDeclaration) {
-    if (node.moduleSpecifier.kind === ts.SyntaxKind.StringLiteral) {
-      const importString = <ts.StringLiteral>node.moduleSpecifier;
-
-      if (importString.text === 'parse-query-params') {
-        this.addFailure(this.createFailure(node.getStart(), node.getWidth(), Rule.FAILURE_STRING));
-      }
-    }
-
-    super.visitImportDeclaration(node);
-  }
 }
