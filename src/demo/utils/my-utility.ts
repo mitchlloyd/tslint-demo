@@ -1,5 +1,4 @@
 import queryParams from 'parse-query-params';
 
-// Where's my squiggles?
-// https://github.com/Microsoft/vscode-tslint/issues/171
+// Might need to reload the window...
 location.href = 'google.com';
